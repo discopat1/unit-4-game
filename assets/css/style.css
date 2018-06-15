@@ -1,0 +1,31 @@
+body {
+  background-image: url("https://cdn.pixabay.com/photo/2017/03/06/17/55/music-2122113__340.jpg")
+}
+.crystal-image {
+    height: 100px;
+    width: 25%;
+    margin: auto;
+    border: black solid 2px;
+  }
+
+  h1 {
+    background: #981818;
+    color: gold;
+  }
+  .container {
+    width: 50%;
+    background: #98211d;
+    color: lavender;
+  }
+  
+  #score, #wins-losses {
+    background: #98211d;
+    color: lavender;
+    border: gold solid 2px;
+  }
+  #eighth-note {
+    background: fuchsia;
+    width: 50%;
+    margin: auto;
+  }
+  
