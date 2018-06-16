@@ -1,22 +1,22 @@
+var gameScore = 0;
 $(document).ready(function(){
     
     //score to reach
-var targetScore = 120;
+   
     // make the score random
-targetScore = function(min,max)
+function targetScore(min,max)
     {
-        return Math.floor(Math.random()*(max-min+1)+min);
+        gameScore= Math.floor(Math.random()*(max-min+1)+min);
     }
 
-// place target score into html
-$("#number-to-guess").text(targetScore(19,120));
-$("#number-to-guess").text(targetScore);
+    // place target score into html
+targetScore(19,120);  
+$("#number-to-guess").text(gameScore);
 
 // random note value
 var randomNum = function() {
    return Math.floor(Math.random() * 12) + 1;
 }
-
 
 //counter
 var counter= 0;
@@ -69,20 +69,24 @@ $(".crystal-image").on("click", function() {
     $("#score").html("Your score: "+counter);
 
     //player wins if their score equals the target score
-    if (counter === targetScore) {
+    if (counter === gameScore) {
         alert("You win!");
-        location.reload();
         wins++;
         $("#wins").html("Wins: "+wins);
+        targetScore(19,120);
+        $("#number-to-guess").text(gameScore);
+        counter = 0;
+        
     }  
     //player loses if their score goes over- price is wrong...
-    else if (counter >= targetScore) {
+    else if (counter >= gameScore) {
         alert("You lose!")
-        location.reload();
         losses++;
         $("#losses").html("Losses: "+losses);
-        
+        targetScore(19,120);
+        $("#number-to-guess").text(gameScore);
+        counter = 0;
     }
-
+console.log(gameScore);
 });
 })
